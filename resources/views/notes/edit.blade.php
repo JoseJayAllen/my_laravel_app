@@ -40,6 +40,18 @@
                 @enderror
             </div>
 
+            <div class="mb-3">
+                <label for="inputsubject" class="form-label"><strong>Subject:</strong></label>
+                <textarea
+                    class="form-control @error('subject') is-invalid @enderror"
+                    name="subject"
+                    id="inputsubject"
+                    placeholder="Subject">{{ old('subject', $note->subject) }}</textarea>
+                @error('subject')
+                    <div class="form-text text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+
             <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Update</button>
         </form>
 
