@@ -12,6 +12,10 @@
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a class="btn btn-success btn-sm" href="{{ route('notes.create') }}"><i class="fa fa-plus"></i> Create New Note</a>
+            <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                @csrf
+                <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+            </form>
         </div>
 
         <table class="table table-bordered table-striped mt-4">
